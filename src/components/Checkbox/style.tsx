@@ -28,6 +28,7 @@ export const HiddenCheckbox = styled.input.attrs({type: 'checkbox'})`
 
 export const Text = styled.label<Props>`
   color: ${props => props.checked ? '#FFF' : '#555'};
+  text-decoration: ${props => props.checked ? 'line-through' : 'none'};
   font-size: 0.9rem;
 `;
 
