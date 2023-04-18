@@ -15,10 +15,7 @@ interface TaskProps {
 
 export const Task = ({description, isConcluded, id, alterStatus, deleteTask} : TaskProps) => {
 
-  const [checked, setChecked] = useState(false);
-
   function handleCheckboxChange(){
-    setChecked(!checked);
     alterStatus(id);
   }
 
@@ -26,25 +23,23 @@ export const Task = ({description, isConcluded, id, alterStatus, deleteTask} : T
     deleteTask(id);
   }
 
-  console.log(id, isConcluded, description);
   return (
     <TaskDiv>
-      {/* <Checkbox label={description}/> */}
-      <CheckboxContainer checked={checked} onClick={handleCheckboxChange}>
+      <CheckboxContainer checked={isConcluded} onClick={handleCheckboxChange}>
         <DivFlex>
-          <HiddenCheckbox onChange={handleCheckboxChange} checked={checked}/>
-          <StyledCheckbox checked={checked}>
+          <HiddenCheckbox onChange={handleCheckboxChange} checked={isConcluded}/>
+          <StyledCheckbox checked={isConcluded}>
             <img
               alt="tick icon"
               style={{width: '20px'}}
               src={CheckIcon}
           />
           </StyledCheckbox>
-          <Text checked={checked}>{description}</Text>
+          <Text checked={isConcluded}>{description}</Text>
         </DivFlex>
       </CheckboxContainer>
       <DivFlex>
-        <BtnDelete onClick={handleDeleteTask} disabled={checked}>
+        <BtnDelete onClick={handleDeleteTask} disabled={isConcluded}>
           <img src={TrashIcon} alt="delete" />
         </BtnDelete>
       </DivFlex>
