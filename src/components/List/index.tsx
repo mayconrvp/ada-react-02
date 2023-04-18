@@ -17,7 +17,7 @@ export interface Task {
 }
 
 export const List = ({listTasks, setListTasks, saveTasks}: ListProps) => {
-  const [searchText, setSearchText] = useState('');
+
 
   const alterStatus = (id: string) => {
     let index = listTasks.findIndex(task => task.id === id);
@@ -48,16 +48,11 @@ export const List = ({listTasks, setListTasks, saveTasks}: ListProps) => {
     
 
   }
-  
-  const handleSearchItem = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchText(event.target.value);
-  }
-
 
   return (
     <ListDiv>
       {listTasks.length > 0 ? 
-        listTasks.filter((eachTask) => eachTask.description.includes(searchText)).map((item, index) => {
+        listTasks.map((item, index) => {
           return (
             <>
             <Task 

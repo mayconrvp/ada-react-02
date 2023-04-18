@@ -5,7 +5,6 @@ interface HeaderProps {
   handleAddNewTask: (text: string) => boolean;
 }
 
-
 export const Header = ({handleAddNewTask}: HeaderProps) => {
   const [textOfInput, setTextOfInput] = useState('');
 
@@ -18,8 +17,18 @@ export const Header = ({handleAddNewTask}: HeaderProps) => {
     <HeaderDiv>
       <Title>Todo List</Title>
       <FormDiv>
-        <Input value={textOfInput} onChange={handleChangeInput} placeholder="Add a description of your task"></Input>
-        <Button onClick={() => {handleAddNewTask(textOfInput) ? setTextOfInput('') : console.log('Invalid Description')}}>Create</Button>
+        <Input 
+          value={textOfInput} 
+          onChange={handleChangeInput} 
+          placeholder="Add a description of your task" 
+        />
+        <Button 
+          onClick={() => {
+            handleAddNewTask(textOfInput) ? setTextOfInput('') : console.log('Invalid Description')
+          }}
+        >
+          Create
+        </Button>
       </FormDiv>
     </HeaderDiv>
   )
