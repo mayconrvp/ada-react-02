@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from "react"
 import { Task } from "../Task";
-import { EmptyTask, ListDiv } from "./style";
+import { EmptyTask, ListDiv, SearchInput } from "./style";
 import TaskIcon from '../../assets/images/task.png';
 import Swal from "sweetalert2";
 
@@ -53,9 +53,9 @@ export const List = ({listTasks, setListTasks, saveTasks}: ListProps) => {
     setSearchText(event.target.value);
   }
 
-
   return (
     <ListDiv>
+      <SearchInput onChange={handleSearchItem} placeholder="Search task"/>
       {listTasks.length > 0 ? 
         listTasks.filter((eachTask) => eachTask.description.includes(searchText)).map((item, index) => {
           return (

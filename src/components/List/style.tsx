@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Input } from "../Header/style";
 
 export const ListDiv = styled.div`
   margin: 3rem auto;
@@ -28,5 +29,23 @@ export const EmptyTask = styled.div`
 
   img{
     width: 90px;
+  }
+`;
+
+export const SearchInput = styled(Input)`
+  width: 40%;
+  align-items: flex-start;
+  color: gray;
+  margin-top: -1.4rem;
+  outline: none;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #c09d11;
+  text-align: center;
+  font-size: 1rem;
+
+  &:focus {
+    border-bottom: 2px solid #58490c;
   }
 `;
