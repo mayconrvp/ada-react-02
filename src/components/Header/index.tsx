@@ -7,11 +7,13 @@ interface HeaderProps {
 
 
 export const Header = ({handleAddNewTask}: HeaderProps) => {
-  const inputRef = useRef<HTMLInputElement>(null)
+  let inputRef = useRef<HTMLInputElement>(null)
 
   const handleCreateTask = () => {
-    const inputValue = inputRef.current?.value;
-    handleAddNewTask(inputValue!);
+    let inputValue = inputRef.current?.value;
+    if(handleAddNewTask(inputValue!)) {
+      if(inputRef.current) inputRef.current.value = "";
+    }
   }
 
   return (

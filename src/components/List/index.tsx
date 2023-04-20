@@ -3,6 +3,7 @@ import { Task } from "../Task";
 import { EmptyTask, ListDiv, SearchInput } from "./style";
 import TaskIcon from '../../assets/images/task.png';
 import Swal from "sweetalert2";
+import { StatusTask } from "../StatusTask";
 
 interface ListProps{
   listTasks: Task[];
@@ -56,6 +57,7 @@ export const List = ({listTasks, setListTasks, saveTasks}: ListProps) => {
   return (
     <ListDiv>
       <SearchInput onChange={handleSearchItem} placeholder="Search task"/>
+      <StatusTask listTasks={listTasks} />
       {listTasks.length > 0 ? 
         listTasks.filter((eachTask) => eachTask.description.includes(searchText)).map((item, index) => {
           return (
@@ -70,7 +72,7 @@ export const List = ({listTasks, setListTasks, saveTasks}: ListProps) => {
             />
             </>
           )
-        }) 
+        })
       : 
         <EmptyTask>
           <img src={TaskIcon} alt="" />

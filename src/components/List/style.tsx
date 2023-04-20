@@ -17,9 +17,9 @@ export const ListDiv = styled.div`
 export const EmptyTask = styled.div`
   border: 1px solid #fff7d6;
   border-radius: 8px;
-  height: 30rem;
+  height: 40vh;
   width: 100%;
-  margin-top:4rem;
+  /* margin-top:4rem; */
   background: #fff7d6;
   display: flex;
   flex-direction: column;
