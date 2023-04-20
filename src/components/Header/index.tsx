@@ -13,6 +13,7 @@ export const Header = () => {
   const handleCreateTask = () => {
     const inputValue = inputRef.current?.value;
     if(addTask(inputValue!)){
+      if(inputRef.current) inputRef.current.value = "";
       return true;
     }else{
       MySwal.fire({

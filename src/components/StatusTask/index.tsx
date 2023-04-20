@@ -2,11 +2,11 @@
  
 
 import { useMemo } from "react";
-import { Task } from "../List";
+import { ITask } from "../Task";
 import { Totalizers } from "./style";
 
 interface StatusTaskProps { 
-  listTasks: Task[]
+  listTasks: ITask[]
 }
 
 const StatusTask = ({listTasks}: StatusTaskProps) => {
@@ -24,9 +24,9 @@ const StatusTask = ({listTasks}: StatusTaskProps) => {
   }, [listTasks])
 
 
-    return (
-      <p>{Status}</p>
-    )
+  return (
+    <p>{Status}</p>
+  )
 }
 
 export { StatusTask }; 
