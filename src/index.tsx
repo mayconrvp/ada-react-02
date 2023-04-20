@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { TaskProvider } from './contexts/task.context';
 
 import GlobalStyle from './GlobalStyle';
 
@@ -9,7 +10,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <Fragment>
-    <GlobalStyle />
-    <App />
+    <TaskProvider>
+      <GlobalStyle />
+      <App />
+    </TaskProvider>
   </Fragment>
 );

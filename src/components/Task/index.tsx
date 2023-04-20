@@ -3,24 +3,39 @@ import { CheckboxContainer, HiddenCheckbox, StyledCheckbox, Text } from "../Chec
 import { BtnDelete, DivFlex, TaskDiv } from "./style";
 import CheckIcon from '../../assets/images/tick.png';
 import TrashIcon from '../../assets/images/trash.svg';
+import { useTask } from "../../contexts/task.context";
+import Swal from "sweetalert2";
 
 
-interface TaskProps {
+export interface ITask {
   id: string;
   description: string;
   isConcluded: boolean;
-  alterStatus: (id: string) => void;
-  deleteTask: (id: string) => void;
 }
 
-export const Task = ({description, isConcluded, id, alterStatus, deleteTask} : TaskProps) => {
-
+export const Task = ({description, isConcluded, id} : ITask) => {
+  const { alterStatus, deleteTask } = useTask();
   function handleCheckboxChange(){
     alterStatus(id);
   }
 
-  function handleDeleteTask(){
-    deleteTask(id);
+  const handleDeleteTask = (id: string) =>{
+    Swal.fire({
+      title: 'Do you want to delete the task?',
+      text: "Deseja excluir a tarefa?",
+      showDenyButton: true,
+      confirmButtonText: 'Yes',
+      denyButtonText: `No`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        if(deleteTask(id)){
+          Swal.fire('Task deleted successfully.', '', 'success')
+        }else{
+          console.log("ERRO AO DELETAR")
+        }
+      }
+    })
   }
 
   return (
@@ -39,7 +54,7 @@ export const Task = ({description, isConcluded, id, alterStatus, deleteTask} : T
         </DivFlex>
       </CheckboxContainer>
       <DivFlex>
-        <BtnDelete onClick={handleDeleteTask} disabled={isConcluded}>
+        <BtnDelete onClick={()=>handleDeleteTask(id)} disabled={isConcluded}>
           <img src={TrashIcon} alt="delete" />
         </BtnDelete>
       </DivFlex>

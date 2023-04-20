@@ -1,18 +1,24 @@
 import { useRef } from "react";
+import { useTask } from "../../contexts/task.context";
 import { Input, HeaderDiv, Button, Title, FormDiv } from "./style"
-
-interface HeaderProps {
-  handleAddNewTask: (text: string) => boolean;
-}
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
-export const Header = ({handleAddNewTask}: HeaderProps) => {
-  let inputRef = useRef<HTMLInputElement>(null)
+export const Header = () => {
+  const MySwal = withReactContent(Swal)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const {addTask} = useTask()
 
   const handleCreateTask = () => {
-    let inputValue = inputRef.current?.value;
-    if(handleAddNewTask(inputValue!)) {
-      if(inputRef.current) inputRef.current.value = "";
+    const inputValue = inputRef.current?.value;
+    if(addTask(inputValue!)){
+      return true;
+    }else{
+      MySwal.fire({
+        title: "Invalid description",
+        text: "Already exists a task with the same name"
+      });
     }
   }
 
@@ -25,5 +31,4 @@ export const Header = ({handleAddNewTask}: HeaderProps) => {
       </FormDiv>
     </HeaderDiv>
   )
-  
 }
