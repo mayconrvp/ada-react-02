@@ -31,7 +31,7 @@ export const BtnDelete = styled.button`
     margin-left: -2px;
   }
 
-  &:hover {
+  &:not(:disabled):hover {
     background-color: #ffa7a6;
     background-position: 0 0;
     color: #FF4742;
