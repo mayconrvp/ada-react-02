@@ -113,7 +113,7 @@ const Register = () => {
 
   return (
     <Block>
-      <Title>Todo List By Ada</Title>
+      <Title>Todo List - Ada Tech</Title>
       <span>Inform your data to enter</span>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>

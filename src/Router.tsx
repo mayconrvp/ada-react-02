@@ -1,12 +1,15 @@
+import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import Register from "./components/Register";
-import { TodoList } from "./components/TodoList";
+const Register = lazy(() => import("./components/Register"));
+const TodoList = lazy(() => import("./components/TodoList"));
 
 export function Router() {
   return (
-    <Routes>
-      <Route path='/list' element={<TodoList />} />
-      <Route path='/' element={<Register />} />
-    </Routes>
+    <Suspense fallback={<div>Carregando...</div>}>
+      <Routes>
+        <Route path='/list' element={<TodoList />} />
+        <Route path='/' element={<Register />} />
+      </Routes> 
+    </Suspense>
   )
 }
