@@ -6,7 +6,7 @@ import { Input } from '../List/style'
 export const Block = styled.div`
   background: #fffce9; 
   border: 2px solid  #d3c462;
-  margin: 14rem auto;
+  margin: 4rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
