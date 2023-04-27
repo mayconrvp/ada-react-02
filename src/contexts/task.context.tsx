@@ -5,12 +5,13 @@ import { v4 as uuidv4, validate } from 'uuid';
 
 interface ITaskContext {
   listTasks: ITask[],
-  addTask: (text: string) => boolean,
-  alterStatus: (id: string) => void,
-  deleteTask: (id: string) => boolean,
   tasksFiltered: ITask[],
   setSearchText: React.Dispatch<React.SetStateAction<string>>,
   searchText: string
+  addTask: (text: string) => boolean,
+  alterStatus: (id: string) => void,
+  deleteTask: (id: string) => boolean,
+  deleteAllTasks: () => void
 }
 
 const TaskContext = createContext<ITaskContext>({} as ITaskContext);
@@ -73,6 +74,11 @@ const TaskProvider = (({children }: IProps) => {
     return false;
   }
 
+  const deleteAllTasks = () => {
+    setListTasks([])
+    saveTasks([]);
+  }
+  
   const alterStatus = (id: string) => {
     let index = listTasks.findIndex(task => task.id === id);
     if(index >= 0){
@@ -90,7 +96,6 @@ const TaskProvider = (({children }: IProps) => {
 
   const isAValidText = (t: string) => {
     const taskEqual = listTasks.find(task => task.description.toLowerCase() === t.toLowerCase())
-    console.log(taskEqual)
     if(!taskEqual) return true;
     return false;
   }
@@ -105,7 +110,8 @@ const TaskProvider = (({children }: IProps) => {
         deleteTask,
         tasksFiltered,
         setSearchText,
-        searchText
+        searchText,
+        deleteAllTasks
       }}
     >
       {children}
