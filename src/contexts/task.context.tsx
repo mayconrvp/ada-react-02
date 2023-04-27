@@ -28,7 +28,6 @@ const TaskProvider = (({children }: IProps) => {
   
   useEffect(() => {
     const fetchTasks = () => {
-      console.log("Passei pelo Fetch")
       const taskString = localStorage.getItem('tasks');
       if(taskString) {
         const tasks = JSON.parse(taskString);
@@ -90,7 +89,7 @@ const TaskProvider = (({children }: IProps) => {
   }
 
   const isAValidText = (t: string) => {
-    const taskEqual = listTasks.find(task => task.description.toLowerCase() == t.toLowerCase())
+    const taskEqual = listTasks.find(task => task.description.toLowerCase() === t.toLowerCase())
     console.log(taskEqual)
     if(!taskEqual) return true;
     return false;
