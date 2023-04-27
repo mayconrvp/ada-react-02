@@ -126,7 +126,7 @@ const Register = () => {
         
         <div>
           <p>Validations</p>
-          <span>The name must be at least 5 characters long.</span>
+          <span>The name must be at least 4 characters long.</span>
           <span>The email must have a valid format.</span>
           <span>Age must be over 16 years old.</span>
         </div>
