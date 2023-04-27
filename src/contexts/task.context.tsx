@@ -96,7 +96,6 @@ const TaskProvider = (({children }: IProps) => {
 
   const isAValidText = (t: string) => {
     const taskEqual = listTasks.find(task => task.description.toLowerCase() === t.toLowerCase())
-    console.log(taskEqual)
     if(!taskEqual) return true;
     return false;
   }

@@ -9,7 +9,7 @@ import withReactContent from 'sweetalert2-react-content'
 
 export const List = () => {
 
-  
+
   const MySwal = withReactContent(Swal)
   const inputRef = useRef<HTMLInputElement>(null)
   const { addTask } = useTask();
@@ -52,7 +52,6 @@ export const List = () => {
 
   const handleNewTaskKeyPress = useCallback(
     (event: KeyboardEvent<HTMLInputElement>) => {
-      console.log('handleNewTaskKeyPress')
       if (event.key === "Enter") {
         handleCreateTask()
       }
