@@ -1,6 +1,3 @@
-
- 
-
 import { useMemo } from "react";
 import { ITask } from "../Task";
 import { Totalizers } from "./style";

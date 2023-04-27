@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Input } from "../Header/style";
 
 export const ListDiv = styled.div`
   margin: 3rem auto;
@@ -32,6 +31,16 @@ export const EmptyTask = styled.div`
   }
 `;
 
+export const Input = styled.input`
+  width: 30rem;
+  height: 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  font-size: 0.8rem;
+  padding-left: 0.5rem;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+`;
+
 export const SearchInput = styled(Input)`
   width: 40%;
   align-items: flex-start;
@@ -49,3 +58,58 @@ export const SearchInput = styled(Input)`
     border-bottom: 2px solid #58490c;
   }
 `;
+
+export const Button = styled.button`
+  appearance: none;
+  background-color: ${(props) => props.color ?? "#eefda9"};
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 6px 16px;  
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  
+
+  &:hover{
+    background-color: #e6dd64;
+    text-decoration: none;
+    transition-duration: 0.1s;
+    cursor: pointer;
+  }
+
+  &:disabled {
+    background-color: #c5eece;
+    border-color: rgba(27, 31, 35, 0.15);
+    color: #959DA5;
+    cursor: not-allowed;
+  }
+
+`;
+
+export const ButtonClearAll = styled(Button)`
+  background-color : #ff00008f ;
+  color:white;
+  margin-bottom: 1rem;
+  &:hover {
+    background-color : #d84343 ;
+  }
+`
+
+
+export const FormDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: -1.6rem;
+  margin-bottom: 2rem;
+`;
+
+
