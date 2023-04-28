@@ -18,7 +18,10 @@ export const Block = styled.div`
   min-height: 20rem;
   padding-bottom: 4rem;
   padding-top: 2rem;
-
+  @media (max-width: 768px){
+    min-width: 20rem;
+    width: 80vw;  
+  }
   form{
     display: flex;
     flex-direction: column;
@@ -34,14 +37,34 @@ export const Block = styled.div`
       font-size: 0.9rem;
     }
   }
+
+  
 `
 
 export const Title = styled.h1`
   font-weight: bold;
+  @media (max-width: 768px){
+    font-size: 1.6rem;
+  }
+`
+
+export const Info = styled.span`
+  color: green;
+  margin-bottom: 1rem;
+  @media (max-width: 768px){
+    font-style: italic;
+    font-size: 0.9rem;
+  }
 `
 
 export const InputRegister = styled(Input)`
   margin-bottom: 1rem;
   margin-top: 0.2rem;
   width: 20rem;
+
+  @media (max-width: 768px){
+    width: 95%;
+    justify-content: center;
+  }
 `
+

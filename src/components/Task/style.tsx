@@ -3,10 +3,17 @@ import styled from 'styled-components';
 export const TaskDiv = styled.div`
   display: flex;
   flex: 1;
+  @media (max-width: 768px){
+    width: 90vw;
+    justify-content: center;
+  }
 `;
 export const DivFlex = styled.div`
   display: flex;
   align-items: center;
+  @media (max-width: 768px){
+    width: 80vw;
+  }
 `;
 
 export const BtnDelete = styled.button`
@@ -43,6 +50,9 @@ export const BtnDelete = styled.button`
     color: #959DA5;
     filter: contrast(40%);
     cursor: not-allowed;
+  }
+  @media (max-width: 768px){
+    width: 3rem;
   }
 `;
 

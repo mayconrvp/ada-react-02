@@ -17,7 +17,7 @@ const StatusTask = ({listTasks}: StatusTaskProps) => {
       }
     }, { complete: 0, progress: 0 })
 
-    return <Totalizers>Total: {listTasks.length} - Concluidas: {data.complete} - Em progresso: {data.progress} </Totalizers>
+    return <Totalizers>Total: {listTasks.length} - Concluded: {data.complete} - In progress: {data.progress} </Totalizers>
   }, [listTasks])
 
 
