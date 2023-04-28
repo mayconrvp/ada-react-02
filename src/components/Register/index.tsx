@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
-import { Block, InputRegister, Title } from './style';
+import { Block, Info, InputRegister, Title } from './style';
 
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
@@ -114,7 +114,7 @@ const Register = () => {
   return (
     <Block>
       <Title>Todo List - Ada Tech</Title>
-      <span>Inform your data to enter</span>
+      <Info>Inform your data to enter</Info>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <InputRegister placeholder='Inform your name' type="text" name='name' value={formData.name} onChange={handleChange}/>

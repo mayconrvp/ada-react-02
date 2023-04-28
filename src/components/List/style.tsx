@@ -29,6 +29,13 @@ export const EmptyTask = styled.div`
   img{
     width: 90px;
   }
+
+  @media (max-width: 768px){
+    width: 80vw;
+    height: 40vh;
+    margin-top: 2rem;
+    font-size: 82%;
+  }
 `;
 
 export const Input = styled.input`
@@ -39,6 +46,11 @@ export const Input = styled.input`
   font-size: 0.8rem;
   padding-left: 0.5rem;
   font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+
+  @media (max-width: 768px){
+    width: 80vw;    
+  }
+  
 `;
 
 export const SearchInput = styled(Input)`
@@ -57,11 +69,14 @@ export const SearchInput = styled(Input)`
   &:focus {
     border-bottom: 2px solid #58490c;
   }
+  @media (max-width: 768px){
+    width: 75vw;    
+  }
 `;
 
 export const Button = styled.button`
   appearance: none;
-  background-color: ${(props) => props.color ?? "#eefda9"};
+  background-color: ${(props) => props.color ?? "#a5c518"};
   border: 1px solid rgba(27, 31, 35, 0.15);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
@@ -90,7 +105,9 @@ export const Button = styled.button`
     color: #959DA5;
     cursor: not-allowed;
   }
-
+  @media (max-width: 768px){
+    width: 80vw;  
+  }
 `;
 
 export const ButtonClearAll = styled(Button)`
@@ -110,6 +127,9 @@ export const FormDiv = styled.div`
   gap: 0.2rem;
   margin-top: -1.6rem;
   margin-bottom: 2rem;
+  @media (max-width: 768px){
+    flex-direction: column;
+  }
 `;
 
 
