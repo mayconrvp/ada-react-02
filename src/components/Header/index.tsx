@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 export const Header = () => {
-  const { user, logout } = useUser()
+  const { logout, getFirstName } = useUser()
 
   const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ export const Header = () => {
   return (
     <>
     <HeadDiv>
-      <Title>Welcome {user.name}</Title>
+      <Title>Welcome {getFirstName()}</Title>
       <Logout onClick={handleLogout}>Sair</Logout>     
     </HeadDiv>
       

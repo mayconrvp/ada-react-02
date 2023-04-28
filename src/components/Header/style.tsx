@@ -5,11 +5,19 @@ export const HeadDiv = styled.div`
   align-items: center;
   justify-content: space-evenly;
   background-color: #d5a30b;
+  @media (max-width: 768px){
+    justify-content: space-between;
+    padding: 0 0.4rem;
+
+  }
 `
 
 export const Title = styled.h1`
   display: flex;
   color: #fff9a6;
+  @media (max-width: 768px){
+    font-size: 1.1rem;
+  }
 `;
 
 export const Logout = styled.span`
