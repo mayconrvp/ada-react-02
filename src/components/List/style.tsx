@@ -48,7 +48,7 @@ export const Input = styled.input`
   font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 
   @media (max-width: 768px){
-    width: 80vw;    
+    width: 70vw;    
   }
   
 `;
@@ -106,7 +106,10 @@ export const Button = styled.button`
     cursor: not-allowed;
   }
   @media (max-width: 768px){
-    width: 80vw;  
+    display: flex;
+    width: 4rem;  
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -128,7 +131,7 @@ export const FormDiv = styled.div`
   margin-top: -1.6rem;
   margin-bottom: 2rem;
   @media (max-width: 768px){
-    flex-direction: column;
+    /* flex-direction: column; */
   }
 `;
 
