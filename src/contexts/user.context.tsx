@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react";
+import { useTask } from "./task.context";
 
 
 interface IUserContext {
@@ -6,7 +7,8 @@ interface IUserContext {
   setUser: React.Dispatch<React.SetStateAction<IUser>>;
   saveUser: (user: IUser) => void;
   logout: () => void;
-  validateUser: (user: IUser) => boolean
+  validateUser: (user: IUser) => boolean;
+  getFirstName: ()=>string;
 }
 
 interface IUser {
@@ -22,7 +24,6 @@ interface IProps {
 
 const UserProvider = (({children }: IProps) => {
   const [user, setUser] = useState<IUser>({name: '', email: '', age: ''});
-  
   useEffect(() => {
     const fetchUser = () => {
       const userString = localStorage.getItem('user');
@@ -43,7 +44,13 @@ const UserProvider = (({children }: IProps) => {
 
   const logout = () => {
     localStorage.setItem('user', '');
+    localStorage.setItem('tasks', '');
   }
+
+  const getFirstName = (): string => {
+    return user.name.split(' ')[0].toUpperCase();
+  }
+
 
   const validateUser = (user: IUser): boolean => {
     if(user.name.trim() === '' || user.email.trim() === '' || parseInt(user.age) < 16){
@@ -59,7 +66,8 @@ const UserProvider = (({children }: IProps) => {
         setUser,
         saveUser, 
         logout,
-        validateUser
+        validateUser,
+        getFirstName
       }}
     >
       {children}
