@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Input } from '../List/style'
+import { Button, Input } from '../List/style'
 
 
 
@@ -38,7 +38,6 @@ export const Block = styled.div`
     }
   }
 
-  
 `
 
 export const Title = styled.h1`
@@ -57,14 +56,37 @@ export const Info = styled.span`
   }
 `
 
+export const Form = styled.form`
+  label{
+    color: #424242;
+    font-size: 0.9rem;
+    margin: 0.4rem 0 .4rem 1.4rem;
+    margin-bottom: 0.4rem;
+  }
+  @media (max-width: 768px){
+    display: flex;
+    justify-content: center;
+  }
+
+`
+
 export const InputRegister = styled(Input)`
   margin-bottom: 1rem;
   margin-top: 0.2rem;
   width: 20rem;
-
   @media (max-width: 768px){
-    width: 95%;
+    display: flex;
     justify-content: center;
+    width: 85%;
+    margin: 0 auto;
+    justify-content: center;
+  }
+`
+
+export const ButtonLogin = styled(Button)`
+  @media (max-width: 768px){
+    margin: 1rem auto;
+    width: 85%;
   }
 `
 
