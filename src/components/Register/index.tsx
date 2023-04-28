@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
-import { Block, Info, InputRegister, Title } from './style';
+import { Block, ButtonLogin, Form, Info, InputRegister, Title } from './style';
 
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
@@ -115,14 +115,14 @@ const Register = () => {
     <Block>
       <Title>Todo List - Ada Tech</Title>
       <Info>Inform your data to enter</Info>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <InputRegister placeholder='Inform your name' type="text" name='name' value={formData.name} onChange={handleChange}/>
         <label htmlFor="email" >Email</label>
         <InputRegister placeholder='Inform your email' type="email" name='email' value={formData.email} onChange={handleChange}/>
         <label htmlFor="age">Age</label>
         <InputRegister placeholder='Inform your age' type="number" name='age' value={formData.age} onChange={handleChange}/>
-        <Button type='submit'>Enter</Button>         
+        <ButtonLogin type='submit'>Enter</ButtonLogin>         
         
         <div>
           <p>Validations</p>
@@ -130,7 +130,7 @@ const Register = () => {
           <span>The email must have a valid format.</span>
           <span>Age must be over 16 years old.</span>
         </div>
-      </form>
+      </Form>
     </Block>
   );
 }
