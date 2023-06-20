@@ -1,6 +1,6 @@
 # Projeto de "Todo-List" usando React
 
-Este é um projeto de "Todo-List" desenvolvido durante uma formação de trilha de estudos front-end. A aplicação permite que os usuários criem e gerenciem suas listas de tarefas, adicionando, marcando como concluídas e excluindo tarefas.
+Este é um projeto de "Todo-List" desenvolvido durante uma formação da Ada Tech na trilha de estudos front-end do Programa Americanas Futuro Polo Tech. A aplicação permite que os usuários criem e gerenciem suas listas de tarefas, adicionando, marcando como concluídas e excluindo tarefas.
 
 # Tecnologias utilizadas
 - React com Typescript.
