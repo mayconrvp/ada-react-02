@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 
 export const Title = styled.p`
-  color: #fff9a6;
+    color: rgb(166,247,80);
+
   line-height: 0;
   font-size: 0.6rem;
 
@@ -18,5 +19,5 @@ export const FooterDiv = styled.footer`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #291f02;
+  background-color: rgb(29,35,43);
 `;

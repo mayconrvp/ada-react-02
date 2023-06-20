@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const TaskDiv = styled.div`
   display: flex;
   flex: 1;
+  
   @media (max-width: 768px){
     width: 90vw;
     justify-content: center;
@@ -18,8 +19,9 @@ export const DivFlex = styled.div`
 
 export const BtnDelete = styled.button`
 
-  background: #ffcebb;
-  border: none;
+  background: #201d1c;
+  border: 1px solid red;
+  /* border: none; */
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   color: #FFFFFF;

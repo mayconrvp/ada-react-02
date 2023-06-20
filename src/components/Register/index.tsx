@@ -114,7 +114,7 @@ const Register = () => {
   return (
     <Block>
       <Title>Todo List - Ada Tech</Title>
-      <Info>Inform your data to enter</Info>
+      {/* <Info>Inform your data to enter</Info> */}
       <Form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <InputRegister placeholder='Inform your name' type="text" name='name' value={formData.name} onChange={handleChange}/>

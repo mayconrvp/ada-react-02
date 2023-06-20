@@ -19,13 +19,13 @@ export const EmptyTask = styled.div`
   height: 40vh;
   width: 100%;
   /* margin-top:4rem; */
-  background: #fff7d6;
+  background: rgb(29, 35, 43);
   display: flex;
   flex-direction: column;
   align-items:center;
   justify-content: center;
-
-
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(255, 251, 240, 0.7);
   img{
     width: 90px;
   }
@@ -41,11 +41,13 @@ export const EmptyTask = styled.div`
 export const Input = styled.input`
   width: 30rem;
   height: 2rem;
-  border-radius: 8px;
+  border-radius: 4px;
   border: 1px solid rgba(27, 31, 35, 0.15);
   font-size: 0.8rem;
   padding-left: 0.5rem;
-  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: 'Montserrat', sans-serif;
+  background: rgb(29, 35, 43);
+  color: rgb(255, 251, 240, 0.7);
 
   @media (max-width: 768px){
     width: 70vw;    
@@ -62,7 +64,7 @@ export const SearchInput = styled(Input)`
   margin-bottom: 1rem;
   background: transparent;
   border: none;
-  border-bottom: 2px solid #c09d11;
+  border-bottom: 2px solid rgb(166, 247, 80);
   text-align: center;
   font-size: 1rem;
 
@@ -76,27 +78,26 @@ export const SearchInput = styled(Input)`
 
 export const Button = styled.button`
   appearance: none;
-  background-color: ${(props) => props.color ?? "#a5c518"};
+  background-color: ${(props) => props.color ?? "rgb(0, 202, 108);"};
   border: 1px solid rgba(27, 31, 35, 0.15);
-  border-radius: 6px;
+  border-radius: 4px;
   box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   box-sizing: border-box;
   color: #24292E;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
   padding: 6px 16px;  
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-  
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
 
   &:hover{
-    background-color: #e6dd64;
+    background-color: #239637;
     text-decoration: none;
-    transition-duration: 0.1s;
-    cursor: pointer;
   }
 
   &:disabled {
@@ -114,8 +115,9 @@ export const Button = styled.button`
 `;
 
 export const ButtonClearAll = styled(Button)`
-  background-color : #ff00008f ;
-  color:white;
+  background-color : #bb2b2b ;
+  width: 7rem;
+  color: white;
   margin-bottom: 1rem;
   &:hover {
     background-color : #d84343 ;

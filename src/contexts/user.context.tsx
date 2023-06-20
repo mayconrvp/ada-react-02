@@ -48,7 +48,8 @@ const UserProvider = (({children }: IProps) => {
   }
 
   const getFirstName = (): string => {
-    return user.name.split(' ')[0].toUpperCase();
+    const firstName = user.name.split(' ')[0];
+    return firstName[0].toUpperCase() + firstName.substring(1).toLowerCase();
   }
 
 

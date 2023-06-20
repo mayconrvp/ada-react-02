@@ -11,7 +11,7 @@ export const CheckboxContainer = styled.div<Props>`
   margin: 4px 4px;
   border-radius: 5px;
   
-  background-color: ${props => props.checked ? '#97C160' : '#fef9ec'};
+  background-color: ${props => props.checked ? '#6d854f' : '#2e3235'};
   
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@ export const HiddenCheckbox = styled.input.attrs({type: 'checkbox'})`
 `;
 
 export const Text = styled.label<Props>`
-  color: ${props => props.checked ? '#FFF' : '#555'};
+  color: ${props => props.checked ? '#FFF' : '#a0a0a0'};
   text-decoration: ${props => props.checked ? 'line-through' : 'none'};
   font-size: 0.9rem;
 `;
