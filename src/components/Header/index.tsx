@@ -2,7 +2,7 @@ import { Title, Logout, HeadDiv } from "./style"
 import Swal from "sweetalert2"
 import { useUser } from "../../contexts/user.context";
 import { useNavigate } from "react-router-dom";
-
+import LogoutIcon from '../../assets/images/logout1.png'
 
 export const Header = () => {
   const { logout, getFirstName } = useUser()
@@ -29,7 +29,7 @@ export const Header = () => {
     <>
     <HeadDiv>
       <Title>Welcome {getFirstName()}</Title>
-      <Logout onClick={handleLogout}>Sair</Logout>     
+      <Logout onClick={handleLogout}><img src={LogoutIcon} /> Sair</Logout>     
     </HeadDiv>
       
     {/* <HeaderDiv>
